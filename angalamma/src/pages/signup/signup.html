@@ -1,0 +1,83 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'SIGNUP_TITLE' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <form [formGroup]="regForm">
+    <ion-list>
+
+      <ion-item>
+        <ion-label fixed>First Name</ion-label>
+        <ion-input type="text" formControlName="firstname" name="firstname"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Last Name</ion-label>
+        <ion-input type="text" formControlName="lastname" name="lastname"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Phone No</ion-label>
+        <ion-input type="number" maxlength="10" (keyup)="changeNumber()" formControlName="phone" name="phone"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Email</ion-label>
+        <ion-input type="email" formControlName="email" name="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Pwd</ion-label>
+        <ion-input type="password" formControlName="password" name="password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Confirm Pwd</ion-label>
+        <ion-input type="password" formControlName="confirmpassword" name="confirmpassword"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Address</ion-label>
+        <ion-textarea type="text" formControlName="address" name="address"></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Zip Code</ion-label>
+        <ion-input type="number" formControlName="pincode" (keyup)="changePinCode()" name="pincode"></ion-input>
+      </ion-item>
+
+      <!--
+      Want to add a Username? Here you go:
+
+      <ion-item>
+        <ion-label floating>Username</ion-label>
+        <ion-input type="text" [(ngModel)]="account.username" name="username"></ion-input>
+      </ion-item>
+      -->
+<!-- 
+      <ion-item>
+        <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label>
+        <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
+      </ion-item> -->
+
+      <div padding>
+        <button ion-button color="primary" (click)="doSignup()" block>{{ 'SIGNUP_BUTTON' | translate }}</button>
+        <button ion-button style="background-color:rgb(215, 222, 228) ;color:black" block>Reset</button>
+      </div>
+
+    </ion-list>
+  </form>
+</ion-content>
+<!-- <ion-footer>
+
+  <div padding>
+    <button ion-button color="primary" block>{{ 'SIGNUP_BUTTON' | translate }}</button>
+    <button ion-button style="background-color:rgb(215, 222, 228) ;color:black" block>Reset</button>
+  </div>
+
+</ion-footer> -->
